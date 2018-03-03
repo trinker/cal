@@ -5,7 +5,7 @@ Status](https://coveralls.io/repos/trinker/cal/badge.svg?branch=master)](https:/
 
 **cal** is an R package designed to partially mimic the [Unix
 `cal`](https://www.tutorialspoint.com/unix_commands/cal.htm) command
-line tool for generating ascii calendars in the console.
+line tool for generating ASCII calendars in the console.
 
 Installation
 ============

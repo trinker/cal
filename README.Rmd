@@ -31,7 +31,7 @@ options(scipen=999)
 [![Coverage Status](https://coveralls.io/repos/trinker/cal/badge.svg?branch=master)](https://coveralls.io/r/trinker/cal?branch=master)
 `r verbadge`
 
-**cal** is an R package designed to partially mimic the [Unix `cal`](https://www.tutorialspoint.com/unix_commands/cal.htm) command line tool for generating ascii calendars in the console.
+**cal** is an R package designed to partially mimic the [Unix `cal`](https://www.tutorialspoint.com/unix_commands/cal.htm) command line tool for generating ASCII calendars in the console.
 
 # Installation
 
