@@ -6,7 +6,7 @@ Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
 Description: Generates command line calendars in the style of 'Unix' 'cal' command line tool.
 Depends: R (>= 3.4.0)
 Suggests: lubridate, stringi
-Date: 2018-03-02
+Date: 2018-03-03
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)

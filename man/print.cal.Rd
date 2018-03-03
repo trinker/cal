@@ -4,7 +4,7 @@
 \alias{print.cal}
 \title{Prints a cal Object}
 \usage{
-\method{print}{cal}(x, ncols = 4, ...)
+\method{print}{cal}(x, ncols = getOption("pax.ncols"), ...)
 }
 \arguments{
 \item{x}{A cal Object}

@@ -4,7 +4,7 @@
 \alias{cal}
 \title{Command Line Calendar}
 \usage{
-cal(cmd, ...)
+cal(cmd = "-r 2", ncols = NULL, ...)
 }
 \arguments{
 \item{cmd}{A string in the form of Month (int/char) AND/OR Year (4 digits).
@@ -20,7 +20,11 @@ Below are the forms that are accepted:
   \item{03 2015}{A single month view for a particular year}
   \item{Jan 2015}{A single month view for a particular year (case insensitive)}
   \item{January 2015}{A single month view for a particular year (case insensitive)}
-}}
+}
+The default is \code{'-r 2'} which prints this month and the next 2.}
+
+\item{ncols}{The number of columns to form the print grid.  This can be set
+globally via \code{options(cal.ncols = 4)}}
 
 \item{\ldots}{ignored.}
 }

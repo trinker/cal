@@ -17,6 +17,9 @@
 #'   \item{Jan 2015}{A single month view for a particular year (case insensitive)}
 #'   \item{January 2015}{A single month view for a particular year (case insensitive)}
 #' }
+#' The default is \code{'-r 2'} which prints this month and the next 2.
+#' @param ncols The number of columns to form the print grid.  This can be set
+#' globally via \code{options(cal.ncols = 4)}
 #' @param \ldots ignored.
 #' @return Prints calendar to the command line.
 #' @references \url{https://www.tutorialspoint.com/unix_commands/cal.htm}
@@ -34,9 +37,8 @@
 #' cal("03 2015")
 #' cal("Jan 2015")
 #' cal("January 2015")
-cal <- function(cmd, ...){
+cal <- function(cmd = '-r 2', ncols = NULL, ...){
 
-    if (missing(cmd)) cmd <- '-r 2'
     if (cmd == '0') cmd <- '-r 0'
 
     year_month <- parse_cmd(cmd)
@@ -60,6 +62,7 @@ cal <- function(cmd, ...){
     )
 
     class(out) <- 'cal'
+    attributes(out)[['ncols']] <- ncols
     out
 }
 
@@ -77,7 +80,11 @@ cal <- function(cmd, ...){
 #' @param \ldots ignored
 #' @method print cal
 #' @export
-print.cal <- function(x, ncols = 4, ...){
+print.cal <- function(x, ncols = getOption("pax.ncols"), ...){
+
+    if (is.null(ncols) && !is.null(attributes(x)[['ncols']])) {
+        ncols <- attributes(x)[['ncols']]
+    }
 
     if (is.null(ncols)) {
         width <- getOption('width')
