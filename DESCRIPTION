@@ -1,0 +1,13 @@
+Package: cal
+Title: Command Line Calendar
+Version: 0.0.1
+Authors@R: c(person("Tyler", "Rinker", email = "tyler.rinker@gmail.com", role = c("aut", "cre")))
+Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
+Description: Generates command line calendars in the style of 'Unix' 'cal' command line tool.
+Depends: R (>= 3.4.3)
+Suggests: lubridate, stringi
+Date: 2018-03-02
+License: GPL-2
+LazyData: TRUE
+Roxygen: list(wrap = FALSE)
+RoxygenNote: 6.0.1

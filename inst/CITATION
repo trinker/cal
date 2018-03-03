@@ -1,0 +1,15 @@
+citHeader("To cite cal in publications, please use:")
+
+
+citEntry(entry = "manual",
+    title = "{cal}: A ...",
+    author = "Tyler W. Rinker",
+    address = "Buffalo, New York",
+    note = "version 0.0.1",
+    year = "2018",
+    url = "http://github.com/trinker/cal", 
+    textVersion  = paste("Rinker, T. W. (2018).",
+        "cal: ...",
+        "version 0.0.1. Buffalo, New York.",
+        "http://github.com/trinker/cal")
+)

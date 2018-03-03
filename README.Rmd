@@ -1,0 +1,70 @@
+---
+title: "cal"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  md_document   
+---
+
+```{r, echo=FALSE}
+desc <- suppressWarnings(readLines("DESCRIPTION"))
+regex <- "(^Version:\\s+)(\\d+\\.\\d+\\.\\d+)"
+loc <- grep(regex, desc)
+ver <- gsub(regex, "\\2", desc[loc])
+#verbadge <- sprintf('<a href="https://img.shields.io/badge/Version-%s-orange.svg"><img src="https://img.shields.io/badge/Version-%s-orange.svg" alt="Version"/></a></p>', ver, ver)
+verbadge <- ''
+````
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+knit_hooks$set(htmlcap = function(before, options, envir) {
+  if(!before) {
+    paste('<p class="caption"><b><em>',options$htmlcap,"</em></b></p>",sep="")
+    }
+    })
+knitr::opts_knit$set(self.contained = TRUE, cache = FALSE, fig.align = 'center')
+knitr::opts_chunk$set(fig.path = "tools/figure/")
+options(scipen=999)
+```
+
+
+[![Build Status](https://travis-ci.org/trinker/cal.svg?branch=master)](https://travis-ci.org/trinker/cal)
+[![Coverage Status](https://coveralls.io/repos/trinker/cal/badge.svg?branch=master)](https://coveralls.io/r/trinker/cal?branch=master)
+`r verbadge`
+
+**cal** is an R package designed to partially mimic the [Unix `cal`](https://www.tutorialspoint.com/unix_commands/cal.htm) command line tool for generating ascii calendars in the console.
+
+# Installation
+
+To download the development version of **cal**:
+
+Download the [zip ball](https://github.com/trinker/cal/zipball/master) or [tar ball](https://github.com/trinker/cal/tarball/master), decompress and run `R CMD INSTALL` on it, or use the **pacman** package to install the development version:
+
+```r
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load_current_gh("trinker/cal")
+```
+
+
+# Examples:
+
+```{r}
+cal()
+cal("2017")
+cal("03")
+cal("Jan")
+cal("december")
+cal("2:5")
+cal("-r 4")
+cal("-r 3")
+cal("-r -3")
+cal("-r -3:4")
+cal("03 2015")
+cal("Jan 2015")
+cal("January 2015")
+```
+# Contact
+
+You are welcome to:    
+- submit suggestions and bug-reports at: <https://github.com/trinker/cal/issues>    
+- send a pull request on: <https://github.com/trinker/cal>    
+- compose a friendly e-mail to: <tyler.rinker@gmail.com>    
